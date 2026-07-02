@@ -63,8 +63,8 @@ void urutkanBerdasarkanHarga(bool ascending) {
 }
 
 void filterBerdasarkanKategori() {
-    cout << "\nPilih Kategori:\n1. Elektronik\n2. Pakaian\nPilih: ";
-    int pil; cin >> pil;
+    cout << "\nPilih Kategori:\n1. Elektronik\n2. Pakaian\n";
+    int pil = inputIntValid("Pilih: ");
     string target = (pil == 1) ? "Elektronik" : "Pakaian";
 
     bool ketemu = false;
@@ -94,14 +94,12 @@ void menuSorting() {
         cout << "\nBelum ada produk di etalase.\n";
         return;
     }
-    int pil;
     cout << "\n--- OPSI TAMPILAN ---\n";
     cout << "1. Urutkan Harga Termurah\n";
     cout << "2. Urutkan Harga Termahal\n";
     cout << "3. Filter Kategori\n";
     cout << "4. Tampilkan Semua (Default)\n";
-    cout << "Pilih (1-4): ";
-    cin >> pil;
+    int pil = inputIntValid("Pilih (1-4): ");
 
     if (pil == 1) {
         urutkanBerdasarkanHarga(true);

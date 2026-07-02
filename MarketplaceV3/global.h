@@ -94,6 +94,7 @@ void simpanSemuaData();
 // Utilitas dan Autentikasi
 void clearScreen();
 void pauseScreen();
+int inputIntValid(string prompt);
 string toLower(string str);
 bool loginProcess();
 void registerProcess();

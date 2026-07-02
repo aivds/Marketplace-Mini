@@ -65,9 +65,7 @@ void konfirmasiPenerimaan() {
     tampilkanRiwayatPembeli(currentUser);
     if (headRiwayat == NULL) return;
 
-    int cariID;
-    cout << "\nMasukkan ID Pesanan yang sudah Anda terima (Status harus 'Dikirim'): ";
-    cin >> cariID;
+    int cariID = inputIntValid("\nMasukkan ID Pesanan yang sudah Anda terima (Status harus 'Dikirim'): ");
 
     NodeRiwayat* temp = headRiwayat;
     while (temp != NULL) {

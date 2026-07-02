@@ -97,7 +97,7 @@ void registerProcess() {
     }
 
     cout << "Password baru: "; cin >> pass;
-    cout << "Daftar Sebagai:\n1. Penjual\n2. Pembeli\nPilih (1/2): ";
+    cout << "Daftar Sebagai:\n1. Penjual\n2. Pembeli\n";
     pilRole = inputIntValid("Pilih (1/2): ");
 
     daftarAkun[totalAkun].username = user;
@@ -153,7 +153,7 @@ void menuPenjual() {
     do {
         clearScreen();
         cout << "=======================================\n";
-        cout << "       🏪 TERMINAL PENJUAL 🏪        \n";
+        cout << "       TERMINAL PENJUAL        \n";
         cout << "=======================================\n";
         cout << "1. Tambah Produk Dagangan\n";
         cout << "2. Lihat Katalog Produk Saya\n";
@@ -182,7 +182,7 @@ void menuPembeli() {
     do {
         clearScreen();
         cout << "=======================================\n";
-        cout << "       🛒 TERMINAL PEMBELI 🛒        \n";
+        cout << "           TERMINAL PEMBELI            \n";
         cout << "=======================================\n";
         cout << "1. Lihat Semua Etalase Barang\n";
         cout << "2. Cari Barang\n";
@@ -221,7 +221,7 @@ int main() {
     do {
         clearScreen();
         cout << "=======================================\n";
-        cout << "        MARKETPLACE MINI v3.0          \n";
+        cout << "        MARKETPLACE MINI               \n";
         cout << "=======================================\n";
         cout << "1. Login\n";
         cout << "2. Register Akun Baru\n";

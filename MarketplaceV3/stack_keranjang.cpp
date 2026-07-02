@@ -7,9 +7,7 @@ void tambahKeKeranjang() {
     }
 
     tampilkanKatalogGlobal();
-    int cariID, jml;
-    cout << "\nMasukkan ID Produk yang ingin dibeli: ";
-    cin >> cariID;
+    int cariID = inputIntValid("\nMasukkan ID Produk yang ingin dibeli: ");
 
     // Cari produk di array
     int idxProduk = -1;
@@ -25,8 +23,7 @@ void tambahKeKeranjang() {
         return;
     }
 
-    cout << "Jumlah yang ingin dibeli: ";
-    cin >> jml;
+    int jml = inputIntValid("Jumlah yang ingin dibeli: ");
 
     if (jml <= 0) {
         cout << "\n[Gagal] Jumlah beli minimal 1.\n";
@@ -121,9 +118,7 @@ void checkoutKeranjang() {
         temp = temp->next;
     }
 
-    int bayar;
-    cout << "\nMasukkan nominal pembayaran Anda: Rp";
-    cin >> bayar;
+    int bayar = inputIntValid("\nMasukkan nominal pembayaran Anda: Rp");
 
     if (bayar < totalBelanja) {
         cout << "\n[Gagal] Uang Anda kurang Rp" << (totalBelanja - bayar) << "! Checkout dibatalkan.\n";

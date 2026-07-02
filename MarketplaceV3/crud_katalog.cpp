@@ -12,14 +12,10 @@ void tambahProduk() {
     cout << "\n--- TAMBAH PRODUK BARU ---\n";
     cout << "Nama Produk : ";
     getline(cin >> ws, baru.nama);
-    cout << "Harga (Rp)  : ";
-    cin >> baru.harga;
-    cout << "Stok        : ";
-    cin >> baru.stok;
+    baru.harga = inputIntValid("Harga (Rp)  : ");
+    baru.stok = inputIntValid("Stok        : ");
     
-    int pilKat;
-    cout << "Kategori (1. Elektronik, 2. Pakaian): ";
-    cin >> pilKat;
+    int pilKat = inputIntValid("Kategori (1. Elektronik, 2. Pakaian): ");
     baru.kategori = (pilKat == 1) ? "Elektronik" : "Pakaian";
     
     baru.pemilik = currentUser; // Dimiliki oleh penjual yang sedang login
@@ -78,17 +74,13 @@ void editProduk() {
     tampilkanKatalogPenjual(currentUser);
     if (totalProduk == 0) return;
 
-    int cariID;
-    cout << "\nMasukkan ID Produk yang ingin diubah: ";
-    cin >> cariID;
+    int cariID = inputIntValid("\nMasukkan ID Produk yang ingin diubah: ");
 
     for (int i = 0; i < totalProduk; i++) {
         if (katalog[i].id == cariID && (katalog[i].pemilik == currentUser || currentRole == "ADMIN")) {
             cout << "--- EDIT PRODUK [" << katalog[i].nama << "] ---\n";
-            cout << "Harga Baru (Rp): ";
-            cin >> katalog[i].harga;
-            cout << "Stok Tambahan  : ";
-            int tStok; cin >> tStok;
+            katalog[i].harga = inputIntValid("Harga Baru (Rp): ");
+            int tStok = inputIntValid("Stok Tambahan  : ");
             katalog[i].stok += tStok;
             cout << "\n[Sukses] Data produk berhasil diperbarui!\n";
             return;
@@ -101,9 +93,7 @@ void hapusProduk() {
     tampilkanKatalogPenjual(currentUser);
     if (totalProduk == 0) return;
 
-    int cariID;
-    cout << "\nMasukkan ID Produk yang ingin dihapus: ";
-    cin >> cariID;
+    int cariID = inputIntValid("\nMasukkan ID Produk yang ingin dihapus: ");
 
     for (int i = 0; i < totalProduk; i++) {
         if (katalog[i].id == cariID && (katalog[i].pemilik == currentUser || currentRole == "ADMIN")) {
